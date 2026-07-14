@@ -8,7 +8,7 @@ An iterative, safety-conscious AI Agent built with Python, Google GenAI SDK, and
 
 The complete prompt engineering process, including test cases, model outputs, and evaluation metrics across all three iterations, is documented in detail:
 
-👉 **[Click Here to View the Google Sheet Evaluation Document](https://docs.google.com/spreadsheets/d/1vCSapzUc_zQjFzzgU0N59mlLizsLtVPbvErIHKeWk_M/edit?gid=299312748#gid=299312748)**
+👉 **[Click Here to View the Google Sheet Evaluation Document](https://docs.google.com/spreadsheets/d/1vCSapzUc_zQjFzzgU0N59mlLizsLtVPbvErIHKeWk_M/edit?usp=sharing)**
 
 ---
 
