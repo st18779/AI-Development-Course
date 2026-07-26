@@ -1,0 +1,175 @@
+{
+  "decisions": [
+    {
+      "id": "dec-001",
+      "title": "Use MongoDB for ProductCatalogService",
+      "summary": "Store products as documents in MongoDB for schema flexibility and BASE consistency.",
+      "file": "ADR.md"
+    },
+    {
+      "id": "dec-002",
+      "title": "Keep OrderService on SQL Server",
+      "summary": "Orders require ACID consistency for financial records.",
+      "file": "ADR.md"
+    },
+    {
+      "id": "dec-003",
+      "title": "Use SQL Server for InventoryService",
+      "summary": "Inventory requires ACID consistency to manage stock accurately.",
+      "file": "ADR.md"
+    },
+    {
+      "id": "dec-004",
+      "title": "Use Redis for Cache in Phase 4",
+      "summary": "Implement Redis cache-aside for catalog reads.",
+      "file": "ADR.md"
+    },
+    {
+      "id": "dec-005",
+      "title": "Strangler Fig Migration Strategy",
+      "summary": "Peel off one service at a time to migrate from monolith to microservices.",
+      "file": "PHASE2-MICROSERVICES-PLAN.md"
+    },
+    {
+      "id": "dec-006",
+      "title": "One Project per Service",
+      "summary": "Each service is its own .NET 8 project with layered folders for deployability.",
+      "file": "PHASE2-MICROSERVICES-PLAN.md"
+    },
+    {
+      "id": "dec-007",
+      "title": "Database-per-Service Rule",
+      "summary": "Each service owns its data and does not access other services' databases.",
+      "file": "PHASE2-MICROSERVICES-PLAN.md"
+    },
+    {
+      "id": "dec-008",
+      "title": "Synchronous HTTP Communication in Phase 2",
+      "summary": "Services communicate via synchronous HTTP calls for simplicity.",
+      "file": "PHASE2-MICROSERVICES-PLAN.md"
+    },
+    {
+      "id": "dec-009",
+      "title": "Use Ocelot for API Gateway",
+      "summary": "Implement Ocelot as the single public entry point for routing.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-010",
+      "title": "BFF Aggregation",
+      "summary": "BFF aggregates order and catalog data into one response.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-011",
+      "title": "Load Balancing with nginx",
+      "summary": "Use nginx to load balance requests across catalog replicas.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-012",
+      "title": "Asynchronous Messaging with RabbitMQ",
+      "summary": "Replace synchronous flow with RabbitMQ for asynchronous messaging.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-013",
+      "title": "Choreography Order Saga",
+      "summary": "Implement a choreography saga for order processing with compensation.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-014",
+      "title": "Redis Cache-Aside",
+      "summary": "Implement Redis cache-aside for catalog reads with invalidation on updates.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-015",
+      "title": "Structured Logging with Serilog",
+      "summary": "Use Serilog for structured logging in every service, aggregated in Seq.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-016",
+      "title": "Health Checks and Docker Compose",
+      "summary": "Implement health checks in each service and use Docker Compose for orchestration.",
+      "file": "README (3).md"
+    },
+    {
+      "id": "dec-017",
+      "title": "Correlation ID Propagation",
+      "summary": "Propagate X-Correlation-ID across services and RabbitMQ for distributed tracing.",
+      "file": "README (3).md"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule-001",
+      "rule": "Each service owns its data and does not access other services' databases.",
+      "scope": "database-per-service",
+      "file": "PHASE2-MICROSERVICES-PLAN.md"
+    },
+    {
+      "id": "rule-002",
+      "rule": "Services communicate via synchronous HTTP calls in Phase 2.",
+      "scope": "communication",
+      "file": "PHASE2-MICROSERVICES-PLAN.md"
+    },
+    {
+      "id": "rule-003",
+      "rule": "Use Ocelot as the API Gateway for routing.",
+      "scope": "gateway",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-004",
+      "rule": "BFF aggregates order and catalog data into one response.",
+      "scope": "bff",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-005",
+      "rule": "Use nginx for load balancing across catalog replicas.",
+      "scope": "load-balancing",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-006",
+      "rule": "Replace synchronous flow with asynchronous messaging using RabbitMQ.",
+      "scope": "messaging",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-007",
+      "rule": "Implement a choreography saga for order processing with compensation.",
+      "scope": "saga",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-008",
+      "rule": "Use Redis cache-aside for catalog reads with invalidation on updates.",
+      "scope": "caching",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-009",
+      "rule": "Use Serilog for structured logging in every service, aggregated in Seq.",
+      "scope": "logging",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-010",
+      "rule": "Implement health checks in each service and use Docker Compose for orchestration.",
+      "scope": "health-checks",
+      "file": "README (3).md"
+    },
+    {
+      "id": "rule-011",
+      "rule": "Propagate X-Correlation-ID across services and RabbitMQ for distributed tracing.",
+      "scope": "correlation-id",
+      "file": "README (3).md"
+    }
+  ],
+  "warnings": []
+}
