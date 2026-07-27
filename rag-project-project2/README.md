@@ -123,3 +123,45 @@ The project was built in three progressive stages:
 3. **Structured Extraction + Routing** — a structured JSON layer extracted
    from the documentation, with an LLM-powered router that builds a query
    against the schema and chooses the right retrieval strategy per question.
+
+### Flow diagram
+
+```
+                          ┌─────────────────────┐
+                          │   User question      │
+                          └──────────┬───────────┘
+                                     │
+                                     ▼
+                          ┌─────────────────────┐
+                          │   Router (LLM)        │
+                          │  builds a query:       │
+                          │  route / category /    │
+                          │  keyword                │
+                          └──────────┬───────────┘
+                    ┌────────────────┴────────────────┐
+                    ▼                                  ▼
+       ┌─────────────────────┐            ┌─────────────────────────┐
+       │   route=semantic      │            │   route=structured        │
+       ├─────────────────────┤            ├─────────────────────────┤
+       │ 1. Retrieve            │           │ 1. Filter extracted_data  │
+       │    (vector search,     │            │    .json by category/    │
+       │    Pinecone)            │           │    keyword                │
+       │ 2. Postprocess          │           │                            │
+       │    (similarity cutoff,  │           │                            │
+       │    retry if empty)      │           │                            │
+       │ 3. Synthesize (LLM)      │          │ 2. Synthesize (LLM)         │
+       └──────────┬─────────────┘            └───────────┬───────────────┘
+                    │                                      │
+                    └──────────────────┬───────────────────┘
+                                        ▼
+                            ┌─────────────────────┐
+                            │   Final answer         │
+                            └─────────────────────┘
+```
+
+**Preparation pipeline** (run once, before the app starts):
+
+```
+docs_sources/*.md → prepare.py (Loading → Chunking → Embedding) → Pinecone index
+docs_sources/*.md → extract.py (LLM structured extraction) → data/extracted_data.json
+```
