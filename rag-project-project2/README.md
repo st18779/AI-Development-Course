@@ -113,7 +113,7 @@ You can also run `agent.py` for the basic MVP version (no workflow), or
 
 ## 🏗️ Architecture
 
-> 📊 See [`workflow-diagram.html`](./workflow-diagram.html) for a visual diagram of the full flow (open it in any browser).
+> 📊 [View the workflow diagram](https://htmlpreview.github.io/?https://raw.githubusercontent.com/st18779/AI-Development-Course/main/rag-project-project2/workflow-diagram.html) (renders directly in your browser)
 
 The project was built in three progressive stages:
 
