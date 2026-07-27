@@ -113,6 +113,8 @@ You can also run `agent.py` for the basic MVP version (no workflow), or
 
 ## 🏗️ Architecture
 
+> 📊 See [`workflow-diagram.html`](./workflow-diagram.html) for a visual diagram of the full flow (open it in any browser).
+
 The project was built in three progressive stages:
 
 1. **Semantic MVP** — Loading → Chunking → Embedding → Indexing, with a
