@@ -1,6 +1,6 @@
 # 🌤️ Weather Israel MCP
 
-MCP Server שמספק ל-LLM גישה לתחזית מזג אוויר עדכנית בערים בישראל, באמצעות שליטה אוטומטית בדפדפן (Playwright) - ולא דרך API קונבנציונלי.
+פרויקט זה מממש MCP Server שמעניק למודל שפה (LLM) יכולת לבדוק מזג אוויר עדכני בערים בישראל. בניגוד לגישה המקובלת של חיבור ל-API חיצוני, השרת משתמש ב-Playwright כדי לשלוט בדפדפן באופן אוטומטי - מזין שם עיר, בוחר אותה מרשימה, וקורא את הנתונים ישירות מהאתר.
 
 ## 🎯 מטרת הפרויקט
 
@@ -24,7 +24,7 @@ MCP Server שמספק ל-LLM גישה לתחזית מזג אוויר עדכני�
 
 ### דרישות מוקדמות
 - Python מותקן
-- מפתח API של Gemini (חינמי, ללא כרטיס אשראי) מ-[aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+- מפתח API של Gemini  מ-[aistudio.google.com/apikey](https://aistudio.google.com/apikey)
 
 ### שלבים
 
