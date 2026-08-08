@@ -3,6 +3,10 @@
 An independent MCP Server that fetches live Israeli weather forecasts by driving a real browser with Playwright, instead of a conventional API. 
 The system lets you chat with an LLM (a large language model) and get up-to-date weather answers for any city in Israel.
 
+## 🎯 Project Goal
+
+Practicing independent MCP Server development, and gaining hands-on experience giving an LLM browser-control abilities through Playwright - simulating a real user browsing a website with no official API.
+
 ## 🧩 Project Structure
 
 - `weather_Israel.py` - MCP Server with 4 Tools for browser control and forecast extraction
