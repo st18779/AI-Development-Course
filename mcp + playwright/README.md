@@ -1,62 +1,61 @@
 # 🌤️ Weather Israel MCP
 
-פיתוח MCP Server עצמאי ששולף תחזית מזג אוויר ישראלית על ידי הפעלת דפדפן אמיתי עם Playwright, במקום API קונבנציונלי. המערכת מאפשרת לשוחח עם LLM ולקבל ממנו תשובות עדכניות על מזג האוויר בכל עיר בישראל.
+An independent MCP Server that fetches live Israeli weather forecasts by driving a real browser with Playwright, instead of a conventional API. The system lets you chat with an LLM and get up-to-date weather answers for any city in Israel.
 
+## 🧩 Project Structure
 
-## 🧩 מבנה הפרויקט
+- `weather_Israel.py` - MCP Server with 4 Tools for browser control and forecast extraction
+- `client.py` - Generic MCP Client, connects to any MCP server
+- `host.py` - Host: terminal chat that connects the user, the LLM (Gemini), and the MCP Server
+- `weather_USA.py` - Additional example MCP Server (USA forecast via official API)
 
-- `weather_Israel.py` - MCP Server עם 4 כלים (Tools) לשליטה בדפדפן וחילוץ תחזית
-- `client.py` - MCP Client גנרי, מתחבר לכל שרת MCP
-- `host.py` - Host: צ'אט טרמינל שמחבר בין המשתמש, ה-LLM (Gemini) וה-MCP Server
-- `weather_USA.py` - MCP Server נוסף לדוגמה (תחזית ארה"ב דרך API רשמי)
+## 🛠️ Tools Implemented in weather_Israel.py
 
-## 🛠️ הכלים (Tools) שממומשים ב-weather_Israel.py
+1. **`open_weather_forecast_israel`** - Opens the browser and navigates to the forecast page
+2. **`enter_weather_forecast_city_israel`** - Types a city name into the search field
+3. **`select_weather_forecast_city_israel`** - Selects the first item from the dropdown list
+4. **`get_weather_forecast_text_israel`** - Extracts temperature, wind, humidity, and more from the page, and provides it to the LLM
 
-1. **`open_weather_forecast_israel`** - פותחת דפדפן ומנווטת לדף התחזית
-2. **`enter_weather_forecast_city_israel`** - מזינה שם עיר בשדה החיפוש
-3. **`select_weather_forecast_city_israel`** - בוחרת את הפריט הראשון ברשימה הנפתחת
-4. **`get_weather_forecast_text_israel`** - מחלצת מהדף את הטמפרטורה, הרוח, הלחות ועוד, ומספקת אותם ל-LLM
+## 🚀 How to Run
 
-## 🚀 איך מריצים
+### Prerequisites
+- Python installed
+- Gemini API key from [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
 
-### דרישות מוקדמות
-- Python מותקן
-- מפתח API של Gemini  מ-[aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+### Steps
 
-### שלבים
+1. Clone/download the repo to your machine
 
-1. שכפלו/הורידו את הריפו למחשב
-
-2. צרו קובץ `.env` בתיקיית הפרויקט עם המפתח:
-
+2. Create a `.env` file in the project folder with the key:
 GEMINI_API_KEY=your-api-key-here
 
-3. התקינו את התלויות:
+3. Install dependencies:
+   
 ```powershell
    uv sync
 ```
 
-4. התקינו דפדפן Chromium עבור Playwright:
+4. Install the Chromium browser for Playwright:
 ```powershell
    uv run playwright install chromium
 ```
 
-5. הריצו את הפרויקט:
+5. Run the project:
 ```powershell
    uv run host.py
 ```
 
-6. שאלו בצ'אט שבטרמינל שאלה על מזג האוויר בעיר בישראל.
+6. Ask a question in the terminal chat about the weather in an Israeli city.
 
-## 💬 דוגמאות לשאלות שה-Agent יודע לענות
+## 💬 Example Questions the Agent Can Answer
 
-- מה מזג האוויר בירושלים?
-- מה הטמפרטורה בתל אביב עכשיו?
-- מה מצב הרוח והלחות בחיפה?
-- איך מזג האוויר בבאר שבע היום?
+- What's the weather like in Jerusalem?
+- What's the temperature in Tel Aviv right now?
+- What are the wind and humidity conditions in Haifa?
+- How's the weather in Beer Sheva today?
 
-## ⚙️ טכנולוגיות
+## ⚙️ Technologies
 
-- **MCP SDK** - הפרוטוקול לחשיפת Tools ל-LLM
-- **Playwright** - אוטומציית דפדפן
-- **Google Gemini API** - המודל שמנהל את השיחה ומחליט מתי להפעיל כלים
+- **MCP SDK** - Protocol for exposing Tools to the LLM
+- **Playwright** - Browser automation
+- **Google Gemini API** - The model that manages the conversation and decides when to call tools
