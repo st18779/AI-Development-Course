@@ -5,7 +5,7 @@ The system lets you chat with an LLM (a large language model) and get up-to-date
 
 ## 🎯 Project Goal
 
-Practicing independent MCP Server development, and gaining hands-on experience giving an LLM browser-control abilities through Playwright - simulating a real user browsing a website with no official API.
+The project is designed to experiment with building a standalone MCP Server, and adding browser control capabilities to LLM using Playwright. The choice to access the site directly (instead of using an official API) is intended to practice a realistic scenario where there is no built-in information source available, and a human user browsing on their own must be "simulated".
 
 ## 🧩 Project Structure
 
