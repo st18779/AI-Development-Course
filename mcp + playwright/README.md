@@ -1,6 +1,7 @@
 # 🌤️ Weather Israel MCP
 
-An independent MCP Server that fetches live Israeli weather forecasts by driving a real browser with Playwright, instead of a conventional API. The system lets you chat with an LLM and get up-to-date weather answers for any city in Israel.
+An independent MCP Server that fetches live Israeli weather forecasts by driving a real browser with Playwright, instead of a conventional API. 
+The system lets you chat with an LLM (a large language model) and get up-to-date weather answers for any city in Israel.
 
 ## 🧩 Project Structure
 
