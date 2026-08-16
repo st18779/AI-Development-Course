@@ -176,19 +176,6 @@ crash the app — the agent can simply try a different source instead.
 
 ---
 
-## 📌 Notes on scope
-
-This project was built in stages, following the course curriculum:
-
-| Stage | Feature | Status |
-|---|---|---|
-| 1 | Basic conversational agent | ✅ Done |
-| 2 | RAG over uploaded documents | ✅ Done |
-| 3 | Web search / scrape / crawl via Firecrawl | ✅ Done |
-| Bonus | Human-in-the-loop source approval | ⏳ Not implemented in this version |
-
----
-
 ## 📚 References
 
 - [LangChain Docs](https://docs.langchain.com/)
