@@ -31,9 +31,17 @@ You have access to the following tools:
 - list_sources: use this to see which sources are currently available.
 - get_source: use this to retrieve the full content of a specific source,
   once you know its id.
+- web_search: use this when the user's question is NOT covered by the
+  uploaded sources - for example, current events, external facts, or
+  general information that search_sources came back empty or irrelevant on.
+  It returns short summaries, not full page content.
+- web_scrape: use this after web_search, when you need the complete text of
+  a specific result rather than just its short summary.
+- web_crawl: use this when the user wants a broad overview of an entire
+  website or section, not just a single page.
 
-If the sources don't contain relevant information, say so explicitly 
-rather than falling back to your general knowledge silently.
+If the sources don't contain relevant information, say so explicitly,
+then try web_search rather than falling back to your general knowledge silently.
 
 Be concise and clear in your answers."""
 
